@@ -1,0 +1,13 @@
+[{'id': '94286367', 'premium': False, 'name': 'Бухгалтер', 'department': None, 'has_test': False, 'response_letter_required': False,
+'area': {'id': '160', 'name': 'Алматы', 'url': 'https://api.hh.ru/areas/160'},
+'salary': {'from': 400000, 'to': 500000, 'currency': 'KZT', 'gross': False},
+'type': {'id': 'open', 'name': 'Открытая'},
+'address': {'city': 'Алматы', 'street': 'улица Бекена Жамакаева', 'building': '278', 'lat': 43.209289, 'lng': 76.956721, 'description': None, 'raw': 'Алматы, улица Бекена Жамакаева, 278', 'metro': None, 'metro_stations': [], 'id': '15051554'},
+'response_url': None, 'sort_point_distance': None, 'published_at': '2024-03-05T16:02:36+0300', 'created_at': '2024-03-05T16:02:36+0300', 'archived': False, 'apply_alternate_url': 'https://hh.ru/applicant/vacancy_response?vacancyId=94286367', 'insider_interview': None, 'url': 'https://api.hh.ru/vacancies/94286367?host=hh.ru', 'alternate_url': 'https://hh.ru/vacancy/94286367', 'relations': [],
+'employer': {'id': '6106597', 'name': 'GLOBAL EPCM INVESTMENT', 'url': 'https://api.hh.ru/employers/6106597', 'alternate_url': 'https://hh.ru/employer/6106597', 'logo_urls': None, 'vacancies_url': 'https://api.hh.ru/vacancies?employer_id=6106597', 'accredited_it_employer': False, 'trusted': True},
+'snippet': {'requirement': 'Знание бухгалтерского и налогового учета. Опыт работ от 3-х лет. Сертификаты проф <highlighttext>бухгалтера</highlighttext> и другие будут преимуществом.', 'responsibility': 'Осуществлять хозяйственные операции (реализация услуг, расчеты с поставщиками, движение денежных средств и др). Выполнять работу по ведению бухгалтерского учета обязательств...'},
+'contacts': None, 'schedule': {'id': 'fullDay', 'name': 'Полный день'},
+'working_days': [], 'working_time_intervals': [], 'working_time_modes': [], 'accept_temporary': False,
+'professional_roles': [{'id': '18', 'name': 'Бухгалтер'}], 'accept_incomplete_resumes': False,
+'experience': {'id': 'between3And6', 'name': 'От 3 до 6 лет'},
+ 'employment': {'id': 'full', 'name': 'Полная занятость'}, 'adv_response_url': None, 'is_adv_vacancy': False, 'adv_context': None}]
