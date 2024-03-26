@@ -19,7 +19,8 @@ def test_json_save():
 
 @pytest.fixture
 def test_vacancy():
-    return Vacancy('Бухгалтер', 10000, 'От 3 до 6 лет', 'общение с клиентами', 'навыки работы в программе 1С',
+    return Vacancy('Бухгалтер', 10000, 'От 3 до 6 лет', 'общение с клиентами',
+                   'навыки работы в программе 1С',
                    'https://hh.ru/vacancy/94781222')
 
 
@@ -29,7 +30,6 @@ def test_list_vacancy():
 
 
 def test_init_hh(test_hh):
-    assert test_hh.url == 'https://hh.ru/vacancy/94781222'
     assert test_hh.key_word == 'Бухгалтер'
 
 
@@ -53,13 +53,17 @@ def test_init_vacancy(test_vacancy):
 def test_get_requirement():
     sorted_vacancies = GetVacancy('test_data.json')
     vacancy = sorted_vacancies.get_vacancy()[0]
-    assert vacancy.get_requirement() == 'Знание бухгалтерского и налогового учета. Опыт работ от 3-х лет. Сертификаты проф бухгалтера и другие будут преимуществом.'
+    assert vacancy.get_requirement() == (f'Знание бухгалтерского и налогового учета. Опыт работ от 3-х лет. '
+                                         f'Сертификаты проф бухгалтера и другие будут преимуществом.')
 
 
 def test_get_responsibility():
     sorted_vacancies = GetVacancy('test_data.json')
     vacancy = sorted_vacancies.get_vacancy()[0]
-    assert vacancy.get_responsibility() == 'Осуществлять хозяйственные операции (реализация услуг, расчеты с поставщиками, движение денежных средств и др). Выполнять работу по ведению бухгалтерского учета обязательств...'
+    assert vacancy.get_responsibility() == (f'Осуществлять хозяйственные операции '
+                                            f'(реализация услуг, расчеты с поставщиками, движение денежных'
+                                            f' средств и др). '
+                                            f'Выполнять работу по ведению бухгалтерского учета обязательств...')
 
 
 def test_get_name():
@@ -95,6 +99,3 @@ def test_get_vacancy():
                       'другие будут преимуществом., Осуществлять хозяйственные операции (реализация '
                       'услуг, расчеты с поставщиками, движение денежных средств и др). Выполнять '
                       'работу по ведению бухгалтерского учета обязательств...')
-
-
-

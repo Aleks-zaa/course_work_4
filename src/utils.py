@@ -1,4 +1,6 @@
-def print_data(list_vacancy, top_n, from_range, to_range):
+def print_data(list_vacancy: list, top_n: int, from_range: int, to_range: int):
+    """Функция сравнения и вывода на экран"""
+
     count_vacancy = 0
     for vacancy in list_vacancy:
         # print(type(vacancy))
@@ -7,9 +9,12 @@ def print_data(list_vacancy, top_n, from_range, to_range):
                 count_vacancy += 1
                 print(
                     f'{count_vacancy}. '
-                    f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}\n{vacancy.get_responsibility()}'
+                    f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}'
+                    f'\n{vacancy.get_responsibility()}'
                     f'Опыт: {vacancy.get_experience()}\n'
-                    f'Зарплата: Отсутствует. Необходимо уточнить о размере зарплаты \nСсылка на вакансию: {vacancy.get_url()}\n\n')
+                    f'Зарплата: Отсутствует. Необходимо уточнить о размере зарплаты \nСсылка на вакансию:'
+                    f'{vacancy.get_url()}\n\n')
+
             else:
                 if vacancy.get_salary()['from'] is None:
 
@@ -17,7 +22,8 @@ def print_data(list_vacancy, top_n, from_range, to_range):
                         count_vacancy += 1
                         print(
                             f'{count_vacancy}. '
-                            f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}\n{vacancy.get_responsibility()}'
+                            f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}'
+                            f'\n{vacancy.get_responsibility()}'
                             f'Опыт: {vacancy.get_experience()}\n'
                             f'Зарплата: от Отсутствует. Необходимо уточнить о размере зарплаты\n'
                             f'Ссылка на вакансию: {vacancy.get_url()}\n\n')
@@ -26,7 +32,8 @@ def print_data(list_vacancy, top_n, from_range, to_range):
                             count_vacancy += 1
                             print(
                                 f'{count_vacancy}. '
-                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}\n{vacancy.get_responsibility()}'
+                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}'
+                                f'\n{vacancy.get_responsibility()}'
                                 f'Опыт: {vacancy.get_experience()}\n'
                                 f'Зарплата:  до {vacancy.get_salary()['to']} {vacancy.get_salary()['currency']}\n'
                                 f'Ссылка на вакансию: {vacancy.get_url()}\n\n')
@@ -39,7 +46,8 @@ def print_data(list_vacancy, top_n, from_range, to_range):
                             count_vacancy += 1
                             print(
                                 f'{count_vacancy}. '
-                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}\n{vacancy.get_responsibility()}'
+                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}'
+                                f'\n{vacancy.get_responsibility()}'
                                 f'Опыт: {vacancy.get_experience()}\n'
                                 f'Зарплата: от {vacancy.get_salary()['from']} {vacancy.get_salary()['currency']}\n'
                                 f'Ссылка на вакансию: {vacancy.get_url()}\n\n')
@@ -52,9 +60,11 @@ def print_data(list_vacancy, top_n, from_range, to_range):
                             count_vacancy += 1
                             print(
                                 f'{count_vacancy}. '
-                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}\n{vacancy.get_responsibility()}'
+                                f'Вакансия: {vacancy.get_name()}\nТребование: {vacancy.get_requirement()}'
+                                f'\n{vacancy.get_responsibility()}'
                                 f'Опыт: {vacancy.get_experience()}\n'
-                                f'Зарплата: от {vacancy.get_salary()['from']} до {vacancy.get_salary()['to']} {vacancy.get_salary()['currency']}\n'
+                                f'Зарплата: от {vacancy.get_salary()['from']} до {vacancy.get_salary()['to']}'
+                                f'{vacancy.get_salary()['currency']}\n'
                                 f'Ссылка на вакансию: {vacancy.get_url()}\n\n')
                         else:
                             continue

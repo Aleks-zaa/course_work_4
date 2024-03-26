@@ -14,7 +14,7 @@ def main():
 
     res_from_hh = JSONSaver(data_hh)
     res_from_hh.save_json()
-    sorted_vacancies = GetVacancy('data.json')
+    sorted_vacancies = GetVacancy('data/data.json')
     list_vacancy = sorted_vacancies.get_vacancy()
     print_data(list_vacancy, top_n, from_range, to_range)
 
