@@ -1,6 +1,7 @@
 import pytest
-from src.classes import Vacancy, GetVacancy, HeadHunter, JSONSaver
-
+from src.work_api import HeadHunter
+from src.work_vacancy import Vacancy
+from src.work_json import WorkJson
 
 @pytest.fixture
 def test_hh():
@@ -9,12 +10,12 @@ def test_hh():
 
 @pytest.fixture
 def test_get_class_vacancy():
-    return GetVacancy('test_data.json')
+    return WorkJson('test_data.json')
 
 
 @pytest.fixture
 def test_json_save():
-    return JSONSaver('test_data.json')
+    return WorkJson('test_data.json')
 
 
 @pytest.fixture
@@ -51,15 +52,15 @@ def test_init_vacancy(test_vacancy):
 
 
 def test_get_requirement():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_requirement() == (f'Знание бухгалтерского и налогового учета. Опыт работ от 3-х лет. '
                                          f'Сертификаты проф бухгалтера и другие будут преимуществом.')
 
 
 def test_get_responsibility():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_responsibility() == (f'Осуществлять хозяйственные операции '
                                             f'(реализация услуг, расчеты с поставщиками, движение денежных'
                                             f' средств и др). '
@@ -67,32 +68,32 @@ def test_get_responsibility():
 
 
 def test_get_name():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_name() == 'Бухгалтер'
 
 
 def test_get_experience():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_experience() == 'От 3 до 6 лет'
 
 
 def test_get_salary():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_salary() == {'currency': 'KZT', 'from': 400000, 'gross': False, 'to': 500000}
 
 
 def test_get_url():
-    sorted_vacancies = GetVacancy('test_data.json')
-    vacancy = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    vacancy = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert vacancy.get_url() == 'https://hh.ru/vacancy/94286367'
 
 
 def test_get_vacancy():
-    sorted_vacancies = GetVacancy('test_data.json')
-    a = sorted_vacancies.get_vacancy()[0]
+    sorted_vacancies = WorkJson('test_data.json')
+    a = sorted_vacancies.get_vacancy('test_data.json')[0]
     assert str(a) == ("Бухгалтер, {'from': 400000, 'to': 500000, 'currency': 'KZT', 'gross': "
                       'False}, От 3 до 6 лет, Знание бухгалтерского и налогового учета. Опыт работ '
                       'от 3-х лет. Сертификаты проф <highlighttext>бухгалтера</highlighttext> и '
