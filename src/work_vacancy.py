@@ -13,6 +13,14 @@ class Vacancy:
     def __str__(self):
         return f'{self.name}, {self.salary}, {self.experience}, {self.requirement}, {self.responsibility}'
 
+    def __lt__(self, other):
+        if isinstance(other, int):
+            if self.salary.get('to') is None:
+                return self.salary.get('from') < other
+            elif self.salary.get('from') is None:
+                return self.salary.get('to') < other
+        raise ValueError
+
     def get_requirement(self) -> str:
         """Проверка на заполнение и избавление от <highlighttext>"""
         if self.requirement is None:
@@ -51,13 +59,15 @@ class Vacancy:
         """Возвращаем ссылку"""
         return self.url
 
-    def like_salary(self, from_range, to_range):
-        """Сравнение сумм зарплат"""
+    # def like_salary(self, from_range, to_range):
+    #     """Сравнение сумм зарплат"""
+    #
+    #     if to_range >= self.salary['to']:
+    #         return 'to1'
+    #     elif to_range >= self.salary['from']:
+    #         return 'to2'
+    #     elif (self.salary['from'] in range(from_range, to_range)
+    #           or self.salary['to'] in range(from_range, to_range)):
+    #         return 'all'
 
-        if to_range >= self.salary['to']:
-            return 'to1'
-        elif to_range >= self.salary['from']:
-            return 'to2'
-        elif (self.salary['from'] in range(from_range, to_range)
-              or self.salary['to'] in range(from_range, to_range)):
-            return 'all'
+
